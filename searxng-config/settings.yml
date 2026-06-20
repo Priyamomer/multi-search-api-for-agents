@@ -1,0 +1,14 @@
+# Minimal SearXNG config for use as a JSON search backend for search.py.
+# The only non-default bits that matter: a secret key, and enabling the JSON
+# output format (SearXNG ships with JSON disabled).
+use_default_settings: true
+
+server:
+  secret_key: "change-me-local-dev-only-0a1b2c3d4e5f"
+  limiter: false           # no per-IP rate limiting for local single-user use
+  image_proxy: false
+
+search:
+  formats:
+    - html
+    - json                 # <- this is what lets search.py read results

@@ -1,0 +1,6 @@
+__pycache__/
+*.pyc
+*.log
+stress_out.log
+.DS_Store
+.claude/
