@@ -18,8 +18,10 @@ import sys
 import time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OLD_PATH = os.path.expanduser(
-    "~/Desktop/CODES/multi-agent-adpative-sync-system/core/tools/web_search.py")
+# The comparison baseline is the original single-source DDG scraper, bundled in
+# this repo so the comparison is reproducible anywhere. Override with the
+# BASELINE_PATH env var to compare against a different engine.
+OLD_PATH = os.environ.get("BASELINE_PATH", os.path.join(HERE, "baseline_ddg.py"))
 
 
 def _load(path, name):

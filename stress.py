@@ -16,8 +16,8 @@ Usage:  python3 stress.py [N] [query...]
 import importlib.util, os, sys, time
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-OLD_PATH = os.path.expanduser(
-    "~/Desktop/CODES/multi-agent-adpative-sync-system/core/tools/web_search.py")
+# Bundled single-source baseline; override with BASELINE_PATH.
+OLD_PATH = os.environ.get("BASELINE_PATH", os.path.join(HERE, "baseline_ddg.py"))
 
 
 def _load(path, name):

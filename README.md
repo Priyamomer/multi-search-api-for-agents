@@ -331,12 +331,18 @@ Full endpoint + integration reference: [INTEGRATION.md](INTEGRATION.md).
 
 ```
 search.py            the engine (providers, RRF fusion, cache, content extraction)
-compare.py           side-by-side old-vs-new with metrics
+baseline_ddg.py      the original single-source DDG scraper — the comparison baseline
+compare.py           side-by-side new-vs-baseline with metrics
 stress.py            high-volume reliability probe with per-provider telemetry
 searxng-config/      local SearXNG settings (JSON API enabled)
 README.md            this file
 INTEGRATION.md       endpoint reference + how to switch a system to SearXNG
+LICENSE              MIT
 ```
+
+`compare.py` and `stress.py` measure `search.py` against the bundled
+`baseline_ddg.py`, so the comparison is reproducible anywhere. Point them at a
+different engine with `BASELINE_PATH=/path/to/other.py`.
 
 ## License
 
